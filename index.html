@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clothing Recommendation</title>
     <link rel="stylesheet" href="CSS/style.css">
+    <script src="JS/index.js"></script>
 </head>
 <body>
     <main>
@@ -13,10 +14,10 @@
         <form>
             <label>Enter City Here</label>
             <input type="text" placeholder="Enter City" id="cityTxt"><br>
-            <input type="button" value="Submit" id="citySubBtn">
+            <input type="button" value="Submit" id="citySubBtn" onclick="getCity()">
         </form>
         <div id="resultsDiv"></div>
     </main>
-    <script src="JS/index.js"></script>
+    
 </body>
 </html>
