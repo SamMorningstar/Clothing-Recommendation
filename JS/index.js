@@ -1,22 +1,19 @@
-let city;
-let cityRequest = new XMLHttpRequest();
-let weatherRequest = new XMLHttpRequest();
-
-function getCity(params) {
+function clothingRecommendation() {
   city = document.getElementById("cityTxt").value;
-  cityRequest.open(
+  weatherRequest = new XMLHttpRequest();
+  weatherRequest.open(
     "GET",
-    "http://api.openweathermap.org/geo/1.0/direct?q=" +
+    "https://api.openweathermap.org/data/2.5/weather?q=" +
       city +
-      "&limit=5&appid=d2c152271c6ba88b6971b5317092885e"
+      "&appid=d2c152271c6ba88b6971b5317092885e"
   );
-  cityRequest.send();
-  cityRequest.onload = () => {
-    console.log(cityRequest);
-    if (cityRequest.status === 200) {
-      console.log(JSON.parse(cityRequest.response));
+  weatherRequest.send();
+  weatherRequest.onload = () => {
+    console.log(weatherRequest);
+    if (weatherRequest.status === 200) {
+      console.log(JSON.parse(weatherRequest.response));
     } else {
-      console.log(`error ${cityRequest.status} ${cityRequest.statusText}`);
+      console.log(`error ${weatherRequest.status} ${weatherRequest.statusText}`);
     }
   };
 }
